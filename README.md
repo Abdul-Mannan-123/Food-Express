@@ -1,151 +1,272 @@
-# 🔥 FoodExpress — Online Food Ordering System
+![foodexpress-banner](https://dummyimage.com/1200x280/d62828/ffffff&text=FoodExpress+Online+Food+Ordering+System)
+
+![Language Badge](https://img.shields.io/badge/Backend-Python%20Flask-3776AB?style=for-the-badge&logo=python)
+![Database Badge](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql)
+![Frontend Badge](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20Bootstrap-7952B3?style=for-the-badge&logo=bootstrap)
+![DBMS Badge](https://img.shields.io/badge/Database-3NF%20Normalized-success?style=for-the-badge)
+![Project Badge](https://img.shields.io/badge/Project-DBS%20Project-orange?style=for-the-badge)
+
+# FoodExpress — Online Food Ordering System
 
 **DBS Project** | FAST NUCES Karachi  
 **Group Members:** Bazil Uddin Khan (24K-0559), Daanial Tejani (24K-0671), Abdul Manan (23K-0829)
 
 ---
 
-## Features
+## DESCRIPTION:
 
-### Customer
-- Register & login with secure password hashing
-- Browse restaurants and menus (grouped by category)
-- Search for food items
-- Add items to cart, adjust quantities
-- Checkout with Cash on Delivery or Online payment
-- Track order status in real time
+FoodExpress is a full-stack online food ordering system built using Flask and MySQL.
+
+The project includes customer ordering functionality, admin management, real-time order tracking, restaurant menus, cart management, payment handling, and a fully normalized relational database design.
+
+The system demonstrates practical implementation of Database Systems concepts including normalization, foreign keys, triggers, views, joins, aggregation queries, and transaction-based order processing.
+
+---
+
+## FEATURES:
+
+### Customer Features
+- Secure registration & login
+- Password hashing
+- Browse restaurants and menus
+- Search food items
+- Add/remove cart items
+- Quantity management
+- Checkout system
+- Cash on Delivery & Online payment
+- Real-time order tracking
+- Order history
+
+---
 
 ### Admin Panel
-- Dashboard with stats (customers, orders, revenue)
-- View and manage all orders (update status)
-- View customer list
-- View restaurant list
+- Dashboard with analytics
+- Manage all customer orders
+- Update order status
+- Customer management
+- Restaurant management
 - Enable/disable menu items
+- Revenue overview
 
-### Database
-- 9 normalized tables (1NF, 2NF, 3NF compliant)
+---
+
+### Database Features
+- 9 normalized tables
+- 1NF, 2NF, 3NF compliant
 - Foreign keys with CASCADE rules
-- Triggers for auto-updating order totals and restaurant ratings
-- Views for order summaries, revenue reports, popular items
-- Advanced SQL queries (JOINs, GROUP BY, HAVING, aggregates)
+- Triggers for auto calculations
+- SQL Views for reporting
+- Advanced JOIN & aggregate queries
 
 ---
 
-## Tech Stack
+## TECH STACK:
 
-| Layer     | Technology                        |
-|-----------|-----------------------------------|
-| Frontend  | HTML5, CSS3, Bootstrap 5, JS      |
-| Backend   | Python 3 + Flask                  |
-| Database  | MySQL (schema provided)           |
-| Fonts     | DM Sans, Playfair Display         |
-| Icons     | Bootstrap Icons                   |
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3, Bootstrap 5, JavaScript |
+| Backend | Python 3 + Flask |
+| Database | MySQL |
+| Fonts | DM Sans, Playfair Display |
+| Icons | Bootstrap Icons |
 
 ---
 
-## Quick Start
+## QUICK START:
 
-### 1. Install Python dependencies
+### Install Dependencies
 
 ```bash
 pip install flask werkzeug
 ```
 
-### 2. Run the app
+---
+
+### Run the Application
 
 ```bash
 cd food_ordering
 python app.py
 ```
 
-The app will start at **http://localhost:5000**
+Application runs at:
 
-### 3. Demo credentials
-
-| Role     | Email / Username        | Password  |
-|----------|------------------------|-----------|
-| Customer | bazil@example.com      | pass123   |
-| Customer | daanial@example.com    | pass123   |
-| Customer | manan@example.com      | pass123   |
-| Admin    | admin                  | admin123  |
+```text
+http://localhost:5000
+```
 
 ---
 
-## MySQL Setup (Optional)
+## DEMO CREDENTIALS:
 
-The app runs with in-memory data by default (no MySQL needed for demo).  
-To use MySQL in production:
+| Role | Email / Username | Password |
+|---|---|---|
+| Customer | bazil@example.com | pass123 |
+| Customer | daanial@example.com | pass123 |
+| Customer | manan@example.com | pass123 |
+| Admin | admin | admin123 |
 
-1. Install MySQL and create the database:
+---
+
+## MYSQL SETUP (OPTIONAL):
+
+Create database:
+
 ```bash
 mysql -u root -p < sql/schema.sql
 ```
 
-2. Update `app.py` to use SQLAlchemy with your MySQL connection string.
-
-The `sql/schema.sql` file includes:
-- All 9 CREATE TABLE statements
-- Triggers (auto order total, auto restaurant rating)
-- Views (customer orders, restaurant revenue, popular items)
-- Sample data (4 restaurants, 12 menu items, 3 customers, 4 orders)
-- 5 advanced query examples (commented out, for your report)
+Update `app.py` with your SQLAlchemy connection string if using MySQL persistence.
 
 ---
 
-## Project Structure
+## INCLUDED IN `schema.sql`:
 
-```
+- CREATE TABLE statements
+- Foreign key constraints
+- Triggers
+- SQL Views
+- Sample data
+- Advanced SQL queries
+- Revenue reports
+- Popular item analysis
+
+---
+
+## PROJECT STRUCTURE:
+
+```text
 food_ordering/
-├── app.py                  # Flask application (all routes)
+│
+├── app.py
 ├── sql/
-│   └── schema.sql          # Complete MySQL schema + data
+│   └── schema.sql
+│
 ├── templates/
-│   ├── base.html           # Base layout (navbar, footer, styles)
-│   ├── index.html          # Home page (hero, categories, restaurants)
-│   ├── menu.html           # Restaurant menu page
-│   ├── login.html          # Customer login
-│   ├── register.html       # Customer registration
-│   ├── cart.html           # Shopping cart
-│   ├── checkout.html       # Checkout page
-│   ├── my_orders.html      # Customer order history
-│   ├── track_order.html    # Order tracking with step indicator
-│   ├── search_results.html # Search results page
-│   ├── admin_login.html    # Admin login
-│   ├── admin_dashboard.html# Admin dashboard with stats
-│   ├── admin_orders.html   # Admin order management
-│   ├── admin_customers.html# Admin customer list
-│   ├── admin_restaurants.html # Admin restaurant list
-│   └── admin_menu.html     # Admin menu item management
+│   ├── base.html
+│   ├── index.html
+│   ├── menu.html
+│   ├── login.html
+│   ├── register.html
+│   ├── cart.html
+│   ├── checkout.html
+│   ├── my_orders.html
+│   ├── track_order.html
+│   ├── search_results.html
+│   ├── admin_login.html
+│   ├── admin_dashboard.html
+│   ├── admin_orders.html
+│   ├── admin_customers.html
+│   ├── admin_restaurants.html
+│   └── admin_menu.html
+│
 └── README.md
 ```
 
 ---
 
-## Database Schema (9 Tables)
+## DATABASE SCHEMA (9 TABLES):
 
-| Table          | Description                          |
-|----------------|--------------------------------------|
-| categories     | Food categories (Burgers, Pizza...) |
-| restaurants    | Restaurant info and ratings          |
-| customers      | Customer accounts                    |
-| admins         | Admin accounts                       |
-| menu_items     | Food items linked to restaurants     |
-| orders         | Customer orders                      |
-| order_details  | Items within each order              |
-| payments       | Payment records                      |
-| reviews        | Customer reviews for restaurants     |
-
----
-
-## Advanced SQL Queries (for Report)
-
-See `sql/schema.sql` — bottom section contains 5 commented queries:
-1. Total revenue per restaurant (delivered orders)
-2. Top 3 most ordered items
-3. Customers who spent more than Rs. 1500
-4. Average order value per restaurant
-5. Monthly order count
+| Table | Description |
+|---|---|
+| categories | Food categories |
+| restaurants | Restaurant information |
+| customers | Customer accounts |
+| admins | Admin accounts |
+| menu_items | Restaurant food items |
+| orders | Customer orders |
+| order_details | Order item details |
+| payments | Payment records |
+| reviews | Restaurant reviews |
 
 ---
 
-© 2025 FoodExpress — FAST NUCES DBS Project
+## ADVANCED SQL FEATURES:
+
+### Triggers
+- Auto-update order totals
+- Auto-update restaurant ratings
+
+### Views
+- Customer order summaries
+- Restaurant revenue reports
+- Popular food items
+
+### Queries
+- Revenue per restaurant
+- Top ordered items
+- High spending customers
+- Average order value
+- Monthly order statistics
+
+---
+
+## DATABASE CONCEPTS USED:
+
+| Concept | Usage |
+|---|---|
+| Normalization | 1NF, 2NF, 3NF |
+| Foreign Keys | Relational integrity |
+| CASCADE Rules | Automatic dependency handling |
+| Triggers | Auto calculations |
+| Views | Reporting & analytics |
+| JOINs | Multi-table queries |
+| Aggregation | Revenue & statistics |
+
+---
+
+## SYSTEM MODULES:
+
+```text
+Customer Module
+│
+├── Authentication
+├── Restaurant Browsing
+├── Cart System
+├── Order Placement
+└── Order Tracking
+
+Admin Module
+│
+├── Dashboard
+├── Order Management
+├── Customer Management
+└── Restaurant Management
+```
+
+---
+
+## FUTURE IMPROVEMENTS:
+- Payment gateway integration
+- Email notifications
+- Delivery tracking with maps
+- Recommendation system
+- Mobile application
+- JWT authentication
+- REST API version
+- Docker deployment
+
+---
+
+## LEARNING OUTCOMES:
+
+This project demonstrates practical understanding of:
+
+- Database Systems
+- Relational schema design
+- SQL queries & optimization
+- Flask web development
+- Authentication systems
+- CRUD operations
+- Full-stack architecture
+- Real-world DBMS workflows
+
+---
+
+<div align="center">
+
+Built using Flask, MySQL, and Bootstrap.
+
+FAST NUCES Karachi — DBS Project
+
+</div>
